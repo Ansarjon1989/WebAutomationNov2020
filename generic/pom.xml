@@ -83,3 +83,5 @@
 
 
 </project>
+
+# and go to terminal and write mvn clean install and hit enter
