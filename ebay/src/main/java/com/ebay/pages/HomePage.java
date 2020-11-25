@@ -1,11 +1,11 @@
-package com.ebay;
+package com.ebay.pages;
 
+import com.report.ExtentTestManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
-
     private static Logger LOGGER = Logger.getLogger(HomePage.class);
 
     @FindBy(id = "gh-ac")
@@ -17,35 +17,29 @@ public class HomePage {
     @FindBy(linkText = "Sign in")
     private WebElement signInBtn;
 
-    @FindBy(id = "gh-cat")
-    private WebElement dropDown;
+    @FindBy(linkText = "register")
+    private WebElement registerBtn;
 
-    @FindBy(id = "gh-cat")
-    private WebElement dropDownAndChooseBook;
+    public void typeOnSearchBar(String data) {
+        searchBar.sendKeys(data);
+        ExtentTestManager.log("Typed on search bar : " + data);
 
-
-    public void typeOnSearchBar() {
-        LOGGER.info("sending keys : Java Books");
-        searchBar.sendKeys("Java Books");
     }
 
     public void clickOnSearchButton() {
         searchBtn.click();
+        ExtentTestManager.log("Clicked on Search Button");
+
     }
 
     public void clickOnSignInButton() {
         signInBtn.click();
+        ExtentTestManager.log("Clicked on Sign In Button");
     }
 
-    public void clickOnDropDown() {
-        dropDown.click();
+    public void clickOnRegisterButton() {
+        registerBtn.click();
+        ExtentTestManager.log("Clicked on Register Button");
     }
-
-    public void clickOnDropDownAndChooseBook() {
-        LOGGER.info(dropDownAndChooseBook.getSize());
-    }
-
-
-
 
 }

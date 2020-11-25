@@ -18,7 +18,6 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -41,7 +40,7 @@ public class TestBase {
     public static String browserStackKey = "";
     //http:// + username + : + key + specific url for cloud
     public static String SAUCE_URL = "http://" + sauceUserName + ":" + sauceKey + "@ondemand.saucelabs.com:80/wd/hub";
-    public static String BROWERSTACK_URL = "http://" + browserStackUserName + ":" + browserStackKey + "@hub-cloud.browserstack.com:80/wd/hub";
+    public static String BROWERSTACK_URL = "https://" + browserStackUserName + ":" + browserStackKey + "@hub-cloud.browserstack.com/wd/hub";
     private static Logger LOGGER = Logger.getLogger(TestBase.class);
 
     /**
@@ -98,18 +97,17 @@ public class TestBase {
     public static WebDriver getCloudDriver(String browser, String browserVersion, String platform,
                                            String envName) throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("name", "Cloud Execution");
-        desiredCapabilities.setCapability("browserName", browser);
+        desiredCapabilities.setCapability("os_version", "Catalina");
+        desiredCapabilities.setCapability("resolution", "1920x1080");
+        desiredCapabilities.setCapability("browser", browser);
         desiredCapabilities.setCapability("browser_version", browserVersion);
         desiredCapabilities.setCapability("os", platform);
-        desiredCapabilities.setCapability("os_version", "Mojave");
-        desiredCapabilities.setCapability("resolution", "1600x1200");
+        desiredCapabilities.setCapability("name", "Sample Test");
         if (envName.equalsIgnoreCase("saucelabs")) {
             driver = new RemoteWebDriver(new URL(SAUCE_URL), desiredCapabilities);
         } else if (envName.equalsIgnoreCase("browserstack")) {
             driver = new RemoteWebDriver(new URL(BROWERSTACK_URL), desiredCapabilities);
         }
-
         return driver;
     }
 
@@ -236,5 +234,3 @@ public class TestBase {
     }
 
 }
-
-
