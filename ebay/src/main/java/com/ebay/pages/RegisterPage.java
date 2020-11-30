@@ -10,9 +10,9 @@ import org.testng.asserts.SoftAssert;
 public class RegisterPage {
 
     @FindBy(xpath = "(//div[text()='Create an account'])[2]")
-    private WebElement createAccontHeading;
+    private WebElement createAccountHeading;
 
-    @FindBy(id = "firstname")
+    @FindBy(xpath = "//input[@label='First Name']")
     private WebElement firstName;
 
     @FindBy(id = "lastname")
@@ -23,13 +23,13 @@ public class RegisterPage {
 
 
 //    public void validateCreateAccountDisplayed() {
-//        Assert.assertTrue(createAccontHeading.isDisplayed());
+//        Assert.assertTrue(createAccountHeading.isDisplayed());
 //
 //        ExtentTestManager.log("Create Account is being displayed");
-//        boolean flag = createAccontHeading.isDisplayed();
+//        boolean flag = createAccountHeading.isDisplayed();
 //        Assert.assertTrue(flag);
 //
-//        Assert.assertEquals(createAccontHeading.isDisplayed(),true);
+//        Assert.assertEquals(createAccountHeading.isDisplayed(),true);
 //    }
 
     public void validateURL() {

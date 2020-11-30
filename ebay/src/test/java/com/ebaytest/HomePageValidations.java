@@ -1,16 +1,16 @@
 package com.ebaytest;
 
 import com.base.TestBase;
+import com.ebay.data.DataProviders;
 import com.ebay.pages.HomePage;
 import com.ebay.pages.LoginPage;
-import com.ebay.data.DataProviders;
+import com.ebay.pages.RegisterPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import com.ebay.pages.RegisterPage;
 
 public class HomePageValidations extends TestBase {
 
-    @Test//(enabled = false)
+    @Test(groups = "smoke")
     public void validateUserBeingAbleToTypeOnSearchBar() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.typeOnSearchBar("Java Books");
@@ -23,14 +23,14 @@ public class HomePageValidations extends TestBase {
         homePage.clickOnSearchButton();
     }
 
-    @Test//(enabled = false)
+    @Test(groups = "smoke")
     public void validateUserBeingAbleToClickOnSignInButton() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.clickOnSignInButton();
     }
 
 
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "credentials",enabled = false)
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "credentials", enabled = false)
     public void validateUserBeingAbleToLogin(String userName, String password) {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -54,7 +54,7 @@ public class HomePageValidations extends TestBase {
     }
 
 
-    @Test(enabled = false)
+    @Test(groups = "smoke")
     public void fieldsValidationOnRegisterPage() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         RegisterPage registerPage = PageFactory.initElements(driver, RegisterPage.class);

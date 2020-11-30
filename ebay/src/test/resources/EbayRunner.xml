@@ -15,6 +15,15 @@
     <parameter name="browserVersion" value="85.0"/>
 
     <test name="Automation tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.ebaytest"></package>
+        </packages>
         <classes>
             <class name="com.ebaytest.HomePageValidations"/>
         </classes>
