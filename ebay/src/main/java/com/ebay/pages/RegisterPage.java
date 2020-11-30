@@ -22,15 +22,15 @@ public class RegisterPage {
     private WebElement email;
 
 
-    public void validateCreateAccountDisplayed() {
-        Assert.assertTrue(createAccontHeading.isDisplayed());
-
-        ExtentTestManager.log("Create Account is being displayed");
-        //boolean flag = createAccontHeading.isDisplayed();
-        //Assert.assertTrue(flag);
-
-        //Assert.assertEquals(createAccontHeading.isDisplayed(),true);
-    }
+//    public void validateCreateAccountDisplayed() {
+//        Assert.assertTrue(createAccontHeading.isDisplayed());
+//
+//        ExtentTestManager.log("Create Account is being displayed");
+//        boolean flag = createAccontHeading.isDisplayed();
+//        Assert.assertTrue(flag);
+//
+//        Assert.assertEquals(createAccontHeading.isDisplayed(),true);
+//    }
 
     public void validateURL() {
         String actualURL = TestBase.driver.getCurrentUrl();

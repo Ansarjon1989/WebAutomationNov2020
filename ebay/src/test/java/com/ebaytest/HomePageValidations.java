@@ -16,7 +16,7 @@ public class HomePageValidations extends TestBase {
         homePage.typeOnSearchBar("Java Books");
     }
 
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "searchData", enabled = false)
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "searchData")
     public void validateUserBeingAbleToSearchForAnItem(String data) {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.typeOnSearchBar(data);
@@ -30,7 +30,7 @@ public class HomePageValidations extends TestBase {
     }
 
 
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "credentials", enabled = false)
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "credentials",enabled = false)
     public void validateUserBeingAbleToLogin(String userName, String password) {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -43,18 +43,18 @@ public class HomePageValidations extends TestBase {
     }
 
 
-    @Test//(enabled = false)
+    @Test(enabled = false)
     public void validateUserCanRegister() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         RegisterPage registerPage = PageFactory.initElements(driver, RegisterPage.class);
 
         homePage.clickOnRegisterButton();
         registerPage.validateURL();
-        registerPage.validateCreateAccountDisplayed();
+
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void fieldsValidationOnRegisterPage() {
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         RegisterPage registerPage = PageFactory.initElements(driver, RegisterPage.class);
