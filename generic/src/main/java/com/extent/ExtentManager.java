@@ -1,4 +1,4 @@
-package com.report;
+package com.extent;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import org.testng.ITestContext;

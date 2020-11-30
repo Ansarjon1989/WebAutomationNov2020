@@ -1,7 +1,7 @@
 package com.ebay.pages;
 
 import com.base.TestBase;
-import com.report.ExtentTestManager;
+import com.extent.ExtentTestManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
